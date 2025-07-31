@@ -20,6 +20,14 @@ jobs:
       - name: Run tests
         run: ./run_verify_tests.sh
 
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: allure-history
+
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
