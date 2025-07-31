@@ -3,7 +3,7 @@ name: Branch Alluring
 on:
   push:
     branches:
-      - "add_integrations_tests"
+      - "main"
 
 jobs:
   test:
